@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+
+        * {
+            color: white;
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+
+            -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+        }
+
+        body {
+            /* background-color: #1b2b64; */
+            background-image: linear-gradient(45deg, #1b2b64, #1d3571);
+            position: relative;
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .kid {
+            position: relative;
+            height: 80vh;
+            margin: 10px 5px; 
+        }
+
+        .kid1, .kid2, .kid3, .kid4, .kid5{
+
+            width: 18%; 
+        }
+
+
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+
+        .kid-opacity::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.1)));
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1));
+            
+        }
+        @keyframes kid-opacity-show {
+            0% {
+                -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.1)));
+                mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1));
+            }
+            100% {
+                -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,1)));
+                mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1));
+            }
+        }
+
+        .kid1::before {
+            background-image: url(images/1.jpg);
+        }
+        .kid2::before {
+            background-image: url(images/2.jpg);
+        }
+        .kid3::before {
+            background-image: url(images/3.jpg);
+        }
+        .kid4::before {
+            background-image: url(images/4.jpg);
+        }
+        .kid5::before {
+            background-image: url(images/5.jpg);
+
+        }
+
+        .btn {
+            margin: auto;
+            text-align: center;
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            right: 10%;
+            height: 50px;
+            height: 40px;
+            font-size: 30px;
+        }
+        .btn1 {
+            background-color: #4d9773;
+        }
+        .btn2 {
+            background-color: #c15206;
+        }
+        .btn3 {
+            background-color: #045cb2;
+        }
+        .btn4 {
+            background-color: #383a38;
+        }
+        .btn5 {
+            background-color: #59420e;
+        }
+        .btn .kid {
+            font-weight: bold;
+            /* font-size: 30px; */
+            position:absolute;
+            top: -10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .custom-border {
+            width: 100%;
+            height: 100vh;
+            /* background-color: gold; */
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            padding: 20px;
+            opacity: 0;
+            z-index: 1;
+            transition: 2s;
+        }
+        .custom-border-fadeIn {
+            opacity: 1;
+            /* animation-name: show-custom-border;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1; */
+        }
+        /* @keyframes show-custom-border {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        } */
+
+        .logo {   
+            transform: scale(2);
+            right: 47%;
+            bottom: 60%;
+            transform-origin: 50% 50%;
+        }
+        .logo-move {
+            animation: animate-logo 2s 0s 1 forwards;
+            animation-timing-function: linear;
+        }
+        @keyframes animate-logo {
+            0% {
+                transform: scale(2);
+                right: 47%;
+                bottom: 60%;
+                transform-origin: 50% 50%;
+            }
+            100% {
+                transform: scale(1);
+                right: 2%;
+                bottom: 2%;
+                transform-origin: 100% 100%;
+            }
+        }
+
+        .mylogo {
+            width: 100px; 
+            height: 100px;
+        }
+        @media (max-width: 900px) {
+            .mylogo {
+                width: 70px; 
+                height: 70px;
+            }
+            .kid {
+                font-size: 20px;
+    
+            }
+        }
+
+
+
+        .startup {
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            height: 100vh;
+            /* background-color: gold; */
+            display: flex;
+            flex-direction: column;
+            justify-content:end;
+            align-items: center;
+            padding-bottom: 10%;
+        }
+        .startup .myallbtn {
+            width: 100px;
+            height: 100px;
+            /* background-color: #4d9773; */
+            position: absolute;
+            transform: translate(00%);
+            display: flex;
+            place-content: center;
+            place-items: center;
+            transition: 2s;
+        }
+        .startup .myallbtn .circle1 {
+            width: 85%;
+            height: 85%;
+            border: white solid 2px;
+            border-radius: 50%;
+            display: flex;
+            place-content: center;
+            place-items: center;
+
+        }
+        .startup .myallbtn .circle1 .circle2 {
+            width: 80%;
+            height: 80%;
+            border: white solid 2px;
+            border-radius: 50%;
+            display: flex;
+            place-content: center;
+            place-items: center;
+        }
+        .startup .myallbtn .circle1 .circle2 .circle3 {
+            width: 75%;
+            height: 75%;
+            border: white solid 2px;
+            border-radius: 50%;
+            display: flex;
+            place-content: center;
+            place-items: center;
+        }
+        .startup .myallbtn .circle1 .circle2 .circle3 .circle4 {
+            width: 70%;
+            height: 70%;
+            border: white solid 2px;
+            border-radius: 50%;
+        }
+
+
+        .myfade1 {
+            animation-name: fade-infinte;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        .myfade2 {
+            animation-name: fade-infinte;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+        }
+        .myfade3 {
+            animation-name: fade-infinte;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes fade-infinte {
+            0% {
+                border-color: rgba(255, 255, 255, 0.0);
+            }
+            100% {
+                border-color: rgba(255, 255, 255, 1.0);
+            }
+        }
+
+        .languages {
+            z-index: 3;
+            width: 100%;
+            position: fixed;
+            height: 100vh;
+            /* background-color: gold; */
+            display: flex;
+            flex-direction: column;
+            /* justify-content:center;
+            align-items: flex-start; */
+            /* flex-wrap: wrap; */
+            overflow:auto;
+            
+        }
+        .languages-part-1 {
+            width: 100%;
+            padding: 8% 5% 0%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            /* background-color: gold; */
+            
+            /* flex-direction: row; */
+            justify-content: space-evenly;
+            /* align-items:flex-start; */
+            flex-wrap: wrap;
+        }
+        .languages-part-1 div {
+            /* background-color: #4d9773; */
+            padding: 10px 30px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 2s;
+        }
+
+        .kid-expand {
+            width: 18%; 
+            height: 80vh;
+            animation: kid-expand 2s linear 0s 1 normal forwards;
+        }
+        @keyframes kid-expand {
+            0% {
+                width: 18%;
+            }
+            100% {
+                width: 90%;
+            }
+        }
+        .kid-hide {
+            width: 18%; 
+            animation: kid-hide 1s linear 0s 1 normal forwards;
+        }
+        @keyframes kid-hide {
+            0% {
+                width: 18%;
+                display: block;
+                visibility: visible;
+            }
+            100% {
+                width: 0%;
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+    </style>
+</head>
+<body dir="rtl" onload="main();">
+
+    <div class="custom-border" >
+        <div style="height: 10px; width: 100%; background-color: white;"></div>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="height: 70vh; width: 10px; background-color: white;"></div>
+            <div style="height: 90vh; width: 10px; background-color: white;"></div>
+        </div>
+        <div style="float: left; height: 10px; width: 87%; background-color: rgb(255, 255, 255);"></div>
+    </div>
+
+    <section id="logo" class="mylogo logo" style="position: absolute; ">
+        <img src="images/logo.png" alt="" style="object-fit: contain;">
+    </section>
+
+    
+    <div class="app">
+        
+    </div>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+        
+
+        let startup = `<div class="startup">
+<div class="myallbtn" >
+    <div class="circle1 myfade1">
+        <div class="circle2 myfade2">
+            <div class="circle3 myfade3">
+                <div class="circle4" onclick="toLanguages();">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>`;
+        let languages = `<div class="languages">
+        <div class="languages-part-1" >
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0s" onclick="toHome();">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.1s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.3s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.4s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.6s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.7s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.8s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.9s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s">العربية</div>
+
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+            <div class=" wow fadeInDown" data-wow-duration="1s" data-wow-delay="2s">العربية</div>
+        </div>
+
+
+    </div>`;    
+        let home = `<div class="container" style=" width: 100%; height: 100vh; position: fixed; z-index: 4; overflow: hidden; display: flex; place-items: center; place-content: center; flex-wrap: wrap;">
+        <div class="wow fadeInUpBig kid kid-opacity kid1" data-wow-duration="1.0s" onclick="expandKid();">
+            <div class="btn btn1">
+                <div class="kid">
+                    الاطفال
+                </div>
+            </div>
+        </div>
+        <div class="wow fadeInUpBig kid kid-opacity kid2" data-wow-duration="1.2s" >
+            <div class="btn btn2">
+                <div class="kid">
+                    لوحات
+                </div>
+            </div>
+        </div>
+        <div class="wow fadeInUpBig kid kid-opacity kid3" data-wow-duration="1.4s" >
+            <div class="btn btn3">
+                <div class="kid">
+                    فديو
+                </div>
+            </div>
+        </div>
+        <div class="wow fadeInUpBig kid kid-opacity kid4" data-wow-duration="1.6s" >
+            <div class="btn btn4">
+                <div class="kid">
+                    مسابقة
+                </div>
+            </div>
+        </div>
+        <div class="wow fadeInUpBig kid kid-opacity kid5" data-wow-duration="1.8s" >
+            <div class="btn btn5">
+                <div class="kid">
+                    موضوعات
+                </div>
+            </div>
+        </div>
+    </div>`;
+        
+        let app = document.querySelector('.app');
+        function main() {
+            app.innerHTML = startup;
+        }
+        let custom_border = document.querySelector('.custom-border');
+
+        function toLanguages() {
+            let mylogo = document.getElementById("logo");
+            let myallbtn = document.querySelector(".myallbtn");
+            custom_border.classList.add('custom-border-fadeIn');
+            mylogo.classList.remove("logo");
+            mylogo.classList.add("logo-move");
+            myallbtn.style.cssText = "opacity: 0;";
+            // console.log("dfsjsd");
+            setTimeout(function(){
+                app.innerHTML = languages;
+            }, 2000);
+        }
+
+        function toHome() {
+            let langs = document.querySelectorAll(".languages-part-1 div");
+            for(i = 0; i < langs.length; i++) {
+                langs[i].style.cssText = "opacity: 0;";
+            }
+            setTimeout(function(){
+                app.innerHTML = home;
+            }, 1000);
+        }
+
+        function expandKid() {
+            console.log('kjdhfkjds');
+            let kid1 = document.querySelector(".kid1");
+            let kid2 = document.querySelector(".kid2");
+            let kid3 = document.querySelector(".kid3");
+            let kid4 = document.querySelector(".kid4");
+            let kid5 = document.querySelector(".kid5");
+
+            
+            kid1.style.cssText = "animation: kid-expand 2s linear 0s 1 normal forwards;";
+            kid2.style.cssText = "animation: kid-hide 1s linear 0s 1 normal forwards;";
+            kid3.style.cssText = "animation: kid-hide 1s linear 0s 1 normal forwards;";
+            kid4.style.cssText = "animation: kid-hide 1s linear 0s 1 normal forwards;";
+            kid5.style.cssText = "animation: kid-hide 1s linear 0s 1 normal forwards;";
+
+            setTimeout(function(){
+                kid2.style.cssText = "display: none;";
+                kid3.style.cssText = "display: none;";
+                kid4.style.cssText = "display: none;";
+                kid5.style.cssText = "display: none;";
+            }, 2000);
+        }
+
+        // async function future(duration) {
+        //     let myPromise = new Promise(function(resolve) {
+        //         setTimeout(function() {
+        //             resolve("wdc");
+        //         }, duration);
+        //     });
+        //     await myPromise;
+        // }
+        // let students = document.querySelector(".students");
+        // async function myFun() {
+        //     students.innerHTML = "waiting ...";
+        //     await future(3000);
+        //     students.innerHTML = "Ali";
+        //     console.log("hello world");
+        // }
+        
+        // let obj;
+        // async function fun() {
+        //     let tmp = {a: 'apple', b: 'banana'};
+        //     window.localStorage.setItem('obj', JSON.stringify(tmp));
+        //     obj = window.localStorage.getItem('obj');
+        //     let a = JSON.parse(obj);
+        //     console.log(a['b']);
+        // }
+
+        // let url = "https://mustaphaalahdel.github.io/portfolio/towerfruits.json";
+        // let data = {};
+
+        // async function main() {
+        //     try {
+        //         console.log((await getData())['activeAd']);
+        //         console.log(data['forceUpdate']['url']);
+        //     } catch(err) {
+        //         console.log("Error in Api: " + err);
+        //     }
+        // }
+
+        // async function getData() {
+        //     try {
+        //         let response = await fetch(url);
+        //         data = await response.json();
+        //         console.log("data: " + data['forceUpdate']['version']);
+        //     } catch(err) {
+        //         console.log("Error in Api" + err);
+        //     }
+        //     // let myPromise = new Promise(function(resolve) {
+        //     //     setTimeout(function() {
+        //     //         resolve("myPromise");
+        //     //     }, 3000);
+        //     // });
+        //     // data = await myPromise;
+        //     return data;
+        // }
+    
+    </script>
+</body>
+</html>
