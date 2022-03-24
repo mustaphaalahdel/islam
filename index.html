@@ -24,7 +24,6 @@
         }
 
         body {
-            /* background-color: #1b2b64; */
             background-image: linear-gradient(45deg, #1b2b64, #1d3571);
             position: relative;
             margin: 0%;
@@ -121,7 +120,6 @@
         }
         .btn .kid {
             font-weight: bold;
-            /* font-size: 30px; */
             position:absolute;
             top: -10px;
             text-align: center;
@@ -131,7 +129,6 @@
         .custom-border {
             width: 100%;
             height: 100vh;
-            /* background-color: gold; */
             position: fixed;
             top: 0px;
             bottom: 0px;
@@ -142,19 +139,8 @@
         }
         .custom-border-fadeIn {
             opacity: 1;
-            /* animation-name: show-custom-border;
-            animation-duration: 2s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1; */
         }
-        /* @keyframes show-custom-border {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        } */
+
 
         .logo {   
             transform: scale(2);
@@ -185,25 +171,12 @@
             width: 100px; 
             height: 100px;
         }
-        @media (max-width: 900px) {
-            .mylogo {
-                width: 70px; 
-                height: 70px;
-            }
-            .kid {
-                font-size: 20px;
-    
-            }
-        }
-
-
 
         .startup {
             z-index: 2;
             width: 100%;
             position: fixed;
             height: 100vh;
-            /* background-color: gold; */
             display: flex;
             flex-direction: column;
             justify-content:end;
@@ -213,7 +186,6 @@
         .startup .myallbtn {
             width: 100px;
             height: 100px;
-            /* background-color: #4d9773; */
             position: absolute;
             transform: translate(00%);
             display: flex;
@@ -287,12 +259,8 @@
             width: 100%;
             position: fixed;
             height: 100vh;
-            /* background-color: gold; */
             display: flex;
             flex-direction: column;
-            /* justify-content:center;
-            align-items: flex-start; */
-            /* flex-wrap: wrap; */
             overflow:auto;
             
         }
@@ -301,15 +269,10 @@
             padding: 8% 5% 0%;
             display: grid;
             grid-template-columns: auto auto auto auto;
-            /* background-color: gold; */
-            
-            /* flex-direction: row; */
             justify-content: space-evenly;
-            /* align-items:flex-start; */
             flex-wrap: wrap;
         }
         .languages-part-1 div {
-            /* background-color: #4d9773; */
             padding: 10px 30px;
             margin: 10px;
             text-align: center;
@@ -344,6 +307,26 @@
                 width: 0%;
                 display: none;
                 visibility: hidden;
+            }
+        }
+
+
+        @media (max-width: 900px) {
+            .mylogo {
+                width: 70px; 
+                height: 70px;
+            }
+            .kid {
+                font-size: 20px;
+    
+            }
+            .languages-part-1 {
+                width: 100%;
+                padding: 8% 5% 0%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
             }
         }
 
@@ -507,60 +490,6 @@
                 kid5.style.cssText = "display: none;";
             }, 2000);
         }
-
-        // async function future(duration) {
-        //     let myPromise = new Promise(function(resolve) {
-        //         setTimeout(function() {
-        //             resolve("wdc");
-        //         }, duration);
-        //     });
-        //     await myPromise;
-        // }
-        // let students = document.querySelector(".students");
-        // async function myFun() {
-        //     students.innerHTML = "waiting ...";
-        //     await future(3000);
-        //     students.innerHTML = "Ali";
-        //     console.log("hello world");
-        // }
-        
-        // let obj;
-        // async function fun() {
-        //     let tmp = {a: 'apple', b: 'banana'};
-        //     window.localStorage.setItem('obj', JSON.stringify(tmp));
-        //     obj = window.localStorage.getItem('obj');
-        //     let a = JSON.parse(obj);
-        //     console.log(a['b']);
-        // }
-
-        // let url = "https://mustaphaalahdel.github.io/portfolio/towerfruits.json";
-        // let data = {};
-
-        // async function main() {
-        //     try {
-        //         console.log((await getData())['activeAd']);
-        //         console.log(data['forceUpdate']['url']);
-        //     } catch(err) {
-        //         console.log("Error in Api: " + err);
-        //     }
-        // }
-
-        // async function getData() {
-        //     try {
-        //         let response = await fetch(url);
-        //         data = await response.json();
-        //         console.log("data: " + data['forceUpdate']['version']);
-        //     } catch(err) {
-        //         console.log("Error in Api" + err);
-        //     }
-        //     // let myPromise = new Promise(function(resolve) {
-        //     //     setTimeout(function() {
-        //     //         resolve("myPromise");
-        //     //     }, 3000);
-        //     // });
-        //     // data = await myPromise;
-        //     return data;
-        // }
     
     </script>
 </body>
